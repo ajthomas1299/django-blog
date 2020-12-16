@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'blog/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SWD Blog</title>
-</head>
-
-<body>
-    {% if post.published_date %}
-    <div>
-        {{ post.published_date }}
+{% block content %}
+    <div class="post" >
+        <h1>{{ post.title }}</h1>
+        {% if post.published_date %}
+            <div>
+                <p class="published-date" >{{ post.published_date }}</p>
+            </div>
+        {% endif %}
+        <p>{{ post.text | linebreaksbr }}</p>
     </div>
-    {% endif %}
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.text | linebreaksbr }}</p>
-</body>
-
-</html>
+{% endblock %}
+            
