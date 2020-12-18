@@ -28,3 +28,11 @@
 .post h1 a:visited {
     color: rgb(43, 15, 170);
 }
+
+.post-form-blog textarea {
+    width: 100%;
+}
+
+.post-form-blog .btn-primary {
+    float: right;
+}
