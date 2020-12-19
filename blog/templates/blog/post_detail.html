@@ -4,9 +4,12 @@
     <div class="post" >
         <h1>{{ post.title }}</h1>
         {% if post.published_date %}
-            <div>
-                <p class="published-date" >{{ post.published_date }}</p>
+            <div class="d-flex">
+                <p class="published-date " >{{ post.published_date }}</p>
+                <a href="{% url 'post_edit' pk=post.pk %}"> <i class="far fa-edit fa-2x ml-3"></i></a>
             </div>
+
+
         {% endif %}
         <p>{{ post.text | linebreaksbr }}</p>
     </div>
