@@ -1,10 +1,15 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-<h1>{{ post.title }}</h1>
-    <form method="post" class="post-form-blog">
+
+    <form method="post" class="post-form-blog"   >
+
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">SAVE</button>
+        <h1>{{ post.title }}</h1>
+        <button type="submit" class="btn btn-primary">SAVE as DRAFT</button>
+        <br>
+        <p class="d-flex flex-column" >{{ form }}</p>
+        <br>
+        
     </form>
 {% endblock %}

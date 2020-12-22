@@ -14,6 +14,10 @@ urlpatterns = [
     # 127.0.0.1:8000/post/2/edit
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
 
+    # 127.0.0.1:8000/drafts
+    path('drafts/', views.post_draft_list, name='post_draft_list'),
 
+    # 127.0.0.1:8000/post/2/publish
+    path('post/<int:pk>/publish/', views.post_publish, name='post_publish')
 
 ]
