@@ -1,5 +1,9 @@
 from django.urls import path
 from . import views
+# === Qazi method did not work.
+# from django.contrib.auth import views as auth_views
+# from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView
 
 urlpatterns = [
     # 127.0.0.1:8000
@@ -18,6 +22,14 @@ urlpatterns = [
     path('drafts/', views.post_draft_list, name='post_draft_list'),
 
     # 127.0.0.1:8000/post/2/publish
-    path('post/<int:pk>/publish/', views.post_publish, name='post_publish')
+    path('post/<int:pk>/publish/', views.post_publish, name='post_publish'),
+
+    # 127.0.0.1:8000/accounts/login
+    # === what Qazi suggested but it doesn't work.
+    # path('accounts/login/', auth_views.login, name='login'),
+    # path('accounts/Login/', auth_views.LoginView, name='Login'),
+    # path('accounts/login/', auth_views.login, name='login'),
+    path('accounts/login/', LoginView.as_view(), name='login'),
+
 
 ]

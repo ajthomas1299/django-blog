@@ -1,5 +1,7 @@
 {% extends 'blog/base.html' %}
 
+{% block title %}SWD - Blog Posts{% endblock %}
+
 {% block content %}
 
     {% for post in posts %}
@@ -8,7 +10,7 @@
         <p class="published-date">{{ post.published_date }}</p>
         <p>{{ post.text|truncatechars:250|linebreaksbr }}</p>
         <br>
-        <a href="{% url 'post_detail' pk=post.pk %}"><div class="btn btn-primary">Read more...</div></a>
+        <a href="{% url 'post_detail' pk=post.pk %}"><div class="btn btn-success">Read more...</div></a>
         <hr>
     </div>
     {% endfor %}

@@ -11,6 +11,10 @@
     text-decoration: none;
 }
 
+.fa-2x:hover {
+    color: #218838;
+}
+
 .published-date {
     color: #727272;
     font-weight: 400;
@@ -33,7 +37,7 @@
     width: 100%;
 }
 
-.post-form-blog .btn-primary {
+.post-form-blog .btn-success {
     float: right;
 }
 

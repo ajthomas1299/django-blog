@@ -20,5 +20,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # 127.0.0.1:8000
-    path('', include('blog.urls'))
+    path('', include('blog.urls')),
+
+    # include auth views in our project.
+    # path('accounts/', include('django.contrib.auth.urls')),
 ]

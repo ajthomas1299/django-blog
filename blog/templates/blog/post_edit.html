@@ -1,12 +1,27 @@
 {% extends 'blog/base.html' %}
 
+{% block title %}
+
+    {% if post.title %}
+
+        SWD Edit - {{ post.title }}
+
+    {% else %}
+
+        SWD Create New Post
+
+    {% endif %}
+
+{% endblock %}
+
+
 {% block content %}
 
     <form method="post" class="post-form-blog"   >
 
         {% csrf_token %}
         <h1>{{ post.title }}</h1>
-        <button type="submit" class="btn btn-primary">SAVE as DRAFT</button>
+        <button type="submit" class="btn btn-success">SAVE as DRAFT</button>
         <br>
         <p class="d-flex flex-column" >{{ form }}</p>
         <br>

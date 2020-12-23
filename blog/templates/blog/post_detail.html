@@ -1,5 +1,7 @@
 {% extends 'blog/base.html' %}
 
+{% block title %}SWD - {{ post.title }}{% endblock %}
+
 {% block content %}
     <div class="post" >
 
@@ -13,7 +15,7 @@
 
         {% else %}
 
-            <a href="{% url 'post_publish' pk=post.pk %}" class="btn btn-primary">Publish</a>
+            <a href="{% url 'post_publish' pk=post.pk %}" class="btn btn-success">Publish</a>
 
         {% endif %}
 
