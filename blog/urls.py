@@ -3,7 +3,8 @@ from . import views
 # === Qazi method did not work.
 # from django.contrib.auth import views as auth_views
 # from django.contrib.auth.views import LoginView
-from django.contrib.auth.views import LoginView
+# This (below) is the one that worked. Moved to blog_app\urls.py in part 12.
+# from django.contrib.auth.views import LoginView
 
 urlpatterns = [
     # 127.0.0.1:8000
@@ -29,7 +30,8 @@ urlpatterns = [
     # path('accounts/login/', auth_views.login, name='login'),
     # path('accounts/Login/', auth_views.LoginView, name='Login'),
     # path('accounts/login/', auth_views.login, name='login'),
-    path('accounts/login/', LoginView.as_view(), name='login'),
+    # This one (below) worked!  Moved to blog_app\urls.py in part 12.
+    # path('accounts/login/', LoginView.as_view(), name='login'),
 
 
 ]

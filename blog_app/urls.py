@@ -15,9 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # 127.0.0.1:8000/accounts/login
+    path('accounts/login/', LoginView.as_view(), name='login'),
+
+    # 127.0.0.1:8000/accounts/logout
+    # path('accounts/logout/', LogoutView.as_view(), name='logout'),
+    path('accounts/logout/', view=LogoutView.as_view(),
+         name='logout', kwargs={'next_page': 'post_list'}),
 
     # 127.0.0.1:8000
     path('', include('blog.urls')),

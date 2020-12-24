@@ -17,12 +17,15 @@
     <div class="page-header">
         {% if user.is_authenticated %}
 
-            <a href="{% url 'post_draft_list' %}" class="top-menu" title="View Draft List" ><i class="far fa-file-alt fa-2x"></i></a>
+            <a href="{% url 'logout' %}" class="top-menu" title="Log Out" ><i class="fas fa-sign-out-alt fa-2x"></i></a>
             <a href="{% url 'post_new' %}" class="top-menu" title="Create New Post" ><i class="far fa-plus-square fa-2x"></i></a>
+            <a href="{% url 'post_draft_list' %}" class="top-menu" title="View Draft List" ><i class="far fa-file-alt fa-2x"></i></a>
+            
+            <p class="top-menu">Hi, {{ user.username }} <small>:)</small></p>
 
         {% else %}
 
-            <a href="{% url 'login' %}" class="top-menu" title="Create New Post" ><i class="fas fa-sign-in-alt fa-2x"></i></a>
+            <a href="{% url 'login' %}" class="top-menu" title="Log In" ><i class="fas fa-sign-in-alt fa-2x"></i></a>
 
         {% endif %}
 
