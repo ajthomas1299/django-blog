@@ -21,7 +21,17 @@
 
         {% csrf_token %}
         <h1>{{ post.title }}</h1>
-        <button type="submit" class="btn btn-success">SAVE as DRAFT</button>
+
+        {% if post.title %}
+
+            <button type="submit" class="btn btn-success">SAVE</button>
+
+        {% else %}
+        
+            <button type="submit" class="btn btn-success">SAVE DRAFT</button>
+
+        {% endif %}
+
         <br>
         <p class="d-flex flex-column" >{{ form }}</p>
         <br>

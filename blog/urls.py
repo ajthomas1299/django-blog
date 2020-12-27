@@ -30,8 +30,10 @@ urlpatterns = [
     # path('accounts/login/', auth_views.login, name='login'),
     # path('accounts/Login/', auth_views.LoginView, name='Login'),
     # path('accounts/login/', auth_views.login, name='login'),
+
     # This one (below) worked!  Moved to blog_app\urls.py in part 12.
     # path('accounts/login/', LoginView.as_view(), name='login'),
 
-
+    # 127.0.0.1:8000/post/2/comment
+    path('post/<int:pk>/comment/', views.add_comment_to_post, name='add_comment_to_post'),
 ]

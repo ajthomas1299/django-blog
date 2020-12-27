@@ -50,5 +50,10 @@
 
 textarea {
     width: 100vw; 
-    height: 90vh;
+    height: 60vh;
+}
+
+.comment {
+    margin: 20px 0px 20px 20px;
+
 }

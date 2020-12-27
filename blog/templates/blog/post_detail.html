@@ -5,7 +5,15 @@
 {% block content %}
     <div class="post" >
 
+        <div class="d-flex">
+
         <h1>{{ post.title }}</h1>
+
+        {% if user.is_authenticated %}
+            <a href="{% url 'post_edit' pk=post.pk %}" title="Edit"> <i class="far fa-edit fa-2x ml-3 mt-2"></i></a>
+        {% endif %}
+
+        </div>
 
         {% if post.published_date %}
 
@@ -19,11 +27,36 @@
 
         {% endif %}
 
-        {% if user.is_authenticated %}
-            <a href="{% url 'post_edit' pk=post.pk %}"> <i class="far fa-edit fa-2x ml-3"></i></a>
-        {% endif %}
-
         <p>{{ post.text|linebreaksbr}}</p>
+
     </div>
+
+    <hr>
+
+    <a href="{% url 'add_comment_to_post' pk=post.pk %}" class="btn btn-success">Add Comment</a>
+
+    <hr>
+
+    {% for comment in post.comments.all %}
+
+        <div class="comment">
+            
+            <strong>{{ comment.author }}</strong>
+            <div class="date">
+                <small>{{ comment.created_date }}</small>
+            </div>
+            <br>
+            <p>{{ comment.text }}</p>
+            <hr>
+
+        </div>
+
+        {% empty %}
+            <p>No comments yet, You can be the first!</p>
+            <br>
+            <hr>
+
+    {% endfor %}
+
 {% endblock %}
             
