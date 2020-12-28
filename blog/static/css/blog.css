@@ -57,3 +57,11 @@ textarea {
     margin: 20px 0px 20px 20px;
 
 }
+
+.fa-trash-alt {
+    color: pink;
+}
+
+.fa-trash-alt:hover {
+    color: red;
+}
