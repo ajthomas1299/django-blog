@@ -11,7 +11,10 @@
         <p>{{ post.text|truncatechars:250|linebreaksbr }}</p>
         <br>
         <a href="{% url 'post_detail' pk=post.pk %}"><div class="btn btn-success">Read more...</div></a>
+        <a href="{% url 'post_detail' pk=post.pk %}"><div class="btn btn-warning">Comments: {{ post.approved_comments.count }}</div></a>
         <hr>
+
+        
     </div>
     {% endfor %}
 

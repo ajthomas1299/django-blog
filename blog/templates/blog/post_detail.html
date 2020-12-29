@@ -39,22 +39,29 @@
 
     {% for comment in post.comments.all %}
 
-        <div class="comment">
-            
-            <strong>{{ comment.author }}</strong>
+        {% if user.is_authenticated or comment.approved %}
+            <div class="comment">
+                
+                <strong>{{ comment.author }}</strong>
 
-            {% if user.is_authenticated %}
-                <a href="{% url 'comment_remove' pk=comment.pk %}" title="Delete Comment"> <i class="far fa-trash-alt"></i></a>
-            {% endif %}
 
-            <div class="date">
-                <small>{{ comment.created_date }}</small>
+                    {% if not comment.approved and user.is_superuser %}
+
+                        <a href="{% url 'comment_approve' pk=comment.pk %}" title="Approve Comment"><i class="fas fa-check-square"></i></a>
+                
+                        <a href="{% url 'comment_remove' pk=comment.pk %}" title="Delete Comment"> <i class="far fa-trash-alt"></i></a>
+                
+                    {% endif %}
+
+                <div class="date">
+                    <small>{{ comment.created_date }}</small>
+                </div>
+                <br>
+                <p>{{ comment.text }}</p>
+                <hr>
+                
             </div>
-            <br>
-            <p>{{ comment.text }}</p>
-            <hr>
-
-        </div>
+        {% endif %}
 
         {% empty %}
             <p>No comments yet, You can be the first!</p>
@@ -63,5 +70,6 @@
 
     {% endfor %}
 
+    
 {% endblock %}
             

@@ -65,3 +65,11 @@ textarea {
 .fa-trash-alt:hover {
     color: red;
 }
+
+.fa-check-square {
+    color: lightgreen;
+}
+
+.fa-check-square:hover {
+    color: #218838;
+}
