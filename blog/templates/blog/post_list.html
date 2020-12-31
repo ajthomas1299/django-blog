@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+{% load markdownify %}
 
 {% block title %}SWD - Blog Posts{% endblock %}
 
@@ -8,7 +9,7 @@
     <div class="post">
         <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
         <p class="published-date">{{ post.published_date }}</p>
-        <p>{{ post.text|truncatechars:250|linebreaksbr }}</p>
+        <p>{{ post.text|truncatechars:250| markdown | safe | linebreaksbr }}</p>
         <br>
         <a href="{% url 'post_detail' pk=post.pk %}"><div class="btn btn-success">Read more...</div></a>
         <a href="{% url 'post_detail' pk=post.pk %}"><div class="btn btn-warning">Comments: {{ post.approved_comments.count }}</div></a>
