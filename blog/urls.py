@@ -25,6 +25,9 @@ urlpatterns = [
     # 127.0.0.1:8000/post/2/publish
     path('post/<int:pk>/publish/', views.post_publish, name='post_publish'),
 
+    # 127.0.0.1:8000/post/2/delete
+    path('post/<int:pk>/delete/', views.post_delete, name='post_delete'),
+
     # 127.0.0.1:8000/accounts/login
     # === what Qazi suggested but it doesn't work.
     # path('accounts/login/', auth_views.login, name='login'),
