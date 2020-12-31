@@ -11,7 +11,12 @@
     text-decoration: none;
 }
 
-.fa-2x:hover {
+.fa-edit {
+    margin-top: 10px;
+}
+
+
+.fa-edit:hover {
     color: #218838;
 }
 
@@ -60,6 +65,7 @@ textarea {
 
 .fa-trash-alt {
     color: pink;
+    margin-top: 11px;
 }
 
 .fa-trash-alt:hover {
